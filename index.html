@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ORBIS — O tempo em órbita</title>
+<meta name="color-scheme" content="dark">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<canvas id="gl2" aria-hidden="true"></canvas>
+
+<svg id="fb" viewBox="-100 -100 200 200" aria-hidden="true"><g id="ftk"></g><g><line class="hd" id="fH" y2="-46"/><line class="hd" id="fM" y2="-66"/><line id="fS" y2="-80"/></g><circle r="3"/></svg>
+
+<div id="pre" aria-hidden="true">
+ <div class="veil"></div>
+ <div id="pd">
+  <svg viewBox="-100 -100 200 200"><circle class="o" r="46" pathLength="1" transform="rotate(-90)"/><g transform="rotate(-24)"><ellipse class="orb" rx="88" ry="23" pathLength="1"/><circle class="pl" id="pl" r="3" cx="88" cy="0"/></g></svg>
+  <div class="pct"><span><b id="pp">0</b><small>%</small></span></div>
+ </div>
+</div>
+
+<header class="top">
+ <div class="header-left">
+    <button class="add-to-cart" type="button" aria-label="Adicionar relógio à coleção">
+     <span>Adicionar</span>
+   <div class="watch-drop" aria-hidden="true"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="14"/><path d="M22 12v10l7 4"/><path d="M16 3h12M16 41h12"/></svg></div>
+     <div class="cart" aria-hidden="true"><svg viewBox="0 0 36 26"><path d="M1 2.5H6L10 18.5H25.5L28.5 7.5L7.5 7.5" class="shape"/><path d="M11.5 25C12.6046 25 13.5 24.1046 13.5 23C13.5 21.8954 12.6046 21 11.5 21C10.3954 21 9.5 21.8954 9.5 23C9.5 24.1046 10.3954 25 11.5 25Z" class="wheel"/><path d="M24 25C25.1046 25 26 24.1046 26 23C26 21.8954 25.1046 21 24 21C22.8954 21 22 21.8954 22 23C22 24.1046 22.8954 25 24 25Z" class="wheel"/><path d="M14.5 13.5L16.5 15.5L21.5 10.5" class="tick"/></svg></div>
+  </button>
+  <a class="brand" href="#story" aria-label="ORBIS, início">
+   <svg class="mini" viewBox="-100 -100 200 200" aria-hidden="true"><circle class="face" r="96"/><g id="mtk"></g><g><line id="mH" y2="-46"/><line id="mM" y2="-66"/><line id="mS" y2="-80"/></g></svg>
+   <span class="word" aria-hidden="true"><i>O</i><i>R</i><i>B</i><i>I</i><i>S</i></span>
+  </a>
+ </div>
+ <nav aria-label="Principal"><i class="hl" aria-hidden="true"></i><a href="#story">O relógio</a><a href="#colecao">Coleção</a><a class="btn" href="#colecao">Ver coleção</a></nav>
+</header>
+
+<main>
+<section id="story">
+ <div class="pin">
+  <div class="cap" data-a="-1" data-b=".08"><h1><svg id="orbis-logo" role="img" aria-label="ORBIS" viewBox="28 54 575 112" xmlns="http://www.w3.org/2000/svg" focusable="false" style="display:block;margin:0 auto;width:auto;height:clamp(2.2rem,4.8vw,3.6rem);overflow:visible">
+<defs><linearGradient id="logo-silver" gradientUnits="userSpaceOnUse" x1="0" y1="-6" x2="0" y2="106"><stop offset="0" stop-color="#ffffff"/><stop offset=".48" stop-color="#e4e8ef"/><stop offset="1" stop-color="#aab1bd"/></linearGradient></defs>
+<g transform="translate(60,60)" fill="url(#logo-silver)" fill-rule="evenodd">
+<path id="logo-o" d="M0.00,50.00a54.00,54.00 0 1,0 108.00,0a54.00,54.00 0 1,0 -108.00,0ZM15.00,50.00a39.00,39.00 0 1,0 78.00,0a39.00,39.00 0 1,0 -78.00,0Z"/>
+<path id="logo-orbit" transform="rotate(-24 54.0 50)" d="M-38.00,50.00a92.00,24.00 0 1,0 184.00,0a92.00,24.00 0 1,0 -184.00,0ZM-34.80,50.00a88.80,20.80 0 1,0 177.60,0a88.80,20.80 0 1,0 -177.60,0Z"/>
+<path id="logo-planet" d="M108.75,6.77a8.50,8.50 0 1,0 17.00,0a8.50,8.50 0 1,0 -17.00,0Z"/>
+<path id="logo-rbis" d="M204.55 100.00 181.60 60.11H169.12V100.00H152.76V0.29H187.19Q198.67 0.29 206.63 4.30Q214.60 8.32 218.54 15.06Q222.49 21.81 222.49 30.13Q222.49 39.89 216.82 47.85Q211.15 55.81 199.39 58.68L224.07 100.00ZM169.12 47.06H187.19Q196.38 47.06 201.04 42.47Q205.70 37.88 205.70 30.13Q205.70 22.38 201.11 18.01Q196.52 13.63 187.19 13.63H169.12Z M350.03 73.17Q350.03 80.77 346.09 86.87Q342.14 92.97 334.68 96.48Q327.22 100.00 317.32 100.00H277.43V0.29H315.45Q325.64 0.29 332.96 3.73Q340.28 7.17 344.01 12.98Q347.74 18.79 347.74 25.97Q347.74 34.58 343.14 40.32Q338.55 46.05 330.81 48.78Q338.84 50.22 344.44 57.25Q350.03 64.28 350.03 73.17ZM293.79 42.18H314.02Q322.05 42.18 326.57 38.52Q331.09 34.86 331.09 27.98Q331.09 21.23 326.57 17.43Q322.05 13.63 314.02 13.63H293.79ZM333.68 71.45Q333.68 64.13 328.65 59.83Q323.63 55.52 315.31 55.52H293.79V86.66H315.89Q324.21 86.66 328.94 82.64Q333.68 78.62 333.68 71.45Z M418.18 0.29V100.00H401.82V0.29Z M471.26 72.45H488.76Q489.34 78.91 493.86 83.07Q498.38 87.23 506.55 87.23Q515.02 87.23 519.75 83.14Q524.49 79.05 524.49 72.60Q524.49 67.58 521.55 64.42Q518.61 61.26 514.23 59.54Q509.85 57.82 502.11 55.81Q492.35 53.23 486.25 50.57Q480.15 47.92 475.85 42.32Q471.55 36.73 471.55 27.40Q471.55 18.79 475.85 12.34Q480.15 5.88 487.90 2.44Q495.65 -1.00 505.84 -1.00Q520.33 -1.00 529.58 6.24Q538.84 13.49 539.84 26.11H521.76Q521.33 20.66 516.60 16.79Q511.86 12.91 504.11 12.91Q497.08 12.91 492.64 16.50Q488.19 20.09 488.19 26.83Q488.19 31.42 490.99 34.36Q493.78 37.30 498.09 39.02Q502.39 40.75 509.85 42.75Q519.75 45.48 525.99 48.21Q532.24 50.93 536.61 56.60Q540.99 62.27 540.99 71.74Q540.99 79.34 536.90 86.08Q532.81 92.83 524.99 96.92Q517.17 101.00 506.55 101.00Q496.51 101.00 488.48 97.49Q480.44 93.97 475.85 87.52Q471.26 81.06 471.26 72.45Z"/>
+</g>
+</svg></h1></div>
+  <div class="cap" data-a=".14" data-b=".36"><span class="n">01 · Os ponteiros</span><h2>Três ponteiros, <em>uma só direção.</em></h2></div>
+  <div class="cap" data-a=".4" data-b=".62"><span class="n">02 · O mostrador</span><h2>Cada marca é <em>um passo.</em></h2></div>
+  <div class="cap" data-a=".66" data-b=".94"><span class="n">03 · O centro</span><h2>Onde o tempo <em>começa a girar.</em></h2></div>
+ </div>
+</section>
+
+<section id="palavras">
+ <div class="pin2">
+  <h2 class="ph rv">Essência em <em>cada detalhe</em></h2>
+  <svg class="dial" viewBox="-100 -100 200 200" aria-hidden="true">
+   <circle class="dial-ring" r="96"/>
+   <g id="dtk"></g>
+   <g class="hours">
+    <line data-hour="0" y1="-96" y2="-87" transform="rotate(0)"/>
+    <line data-hour="1" y1="-96" y2="-87" transform="rotate(30)"/>
+    <line data-hour="2" y1="-96" y2="-87" transform="rotate(60)"/>
+    <line data-hour="3" y1="-96" y2="-87" transform="rotate(90)"/>
+    <line data-hour="4" y1="-96" y2="-87" transform="rotate(120)"/>
+    <line data-hour="5" y1="-96" y2="-87" transform="rotate(150)"/>
+    <line data-hour="6" y1="-96" y2="-87" transform="rotate(180)"/>
+    <line data-hour="7" y1="-96" y2="-87" transform="rotate(210)"/>
+    <line data-hour="8" y1="-96" y2="-87" transform="rotate(240)"/>
+    <line data-hour="9" y1="-96" y2="-87" transform="rotate(270)"/>
+    <line data-hour="10" y1="-96" y2="-87" transform="rotate(300)"/>
+    <line data-hour="11" y1="-96" y2="-87" transform="rotate(330)"/>
+   </g>
+    <circle class="dial-arc" r="96" pathLength="1" transform="rotate(-90)"/>
+    <g class="hand"><line y1="10" y2="-80"/><circle r="2.4"/></g>
+  </svg>
+  <ol class="drum">
+   <li aria-current="true"><button type="button" data-word="ESTILO">Estilo</button><span class="word-def">A assinatura que se reconhece de longe.</span></li>
+   <li><button type="button" data-word="PRECISÃO">Precisão</button><span class="word-def">Cada segundo no lugar certo.</span></li>
+   <li><button type="button" data-word="ORIGEM">Origem</button><span class="word-def">O ponto de partida de tudo o que se mede.</span></li>
+   <li><button type="button" data-word="ARTE">Arte</button><span class="word-def">Ofício que transforma técnica em emoção.</span></li>
+   <li><button type="button" data-word="DETALHE">Detalhe</button><span class="word-def">Onde a peça revela quem a fez.</span></li>
+   <li><button type="button" data-word="PRESENÇA">Presença</button><span class="word-def">Um objeto que ocupa o pulso com calma.</span></li>
+   <li><button type="button" data-word="ESSÊNCIA">Essência</button><span class="word-def">O que fica quando tudo o resto sai.</span></li>
+   <li><button type="button" data-word="TEMPO">Tempo</button><span class="word-def">A matéria-prima de tudo.</span></li>
+   <li><button type="button" data-word="SILÊNCIO">Silêncio</button><span class="word-def">O tique que só você escuta.</span></li>
+   <li><button type="button" data-word="HERANÇA">Herança</button><span class="word-def">Algo que se passa adiante.</span></li>
+   <li><button type="button" data-word="ALMA">Alma</button><span class="word-def">O que dá sentido ao mecanismo.</span></li>
+   <li><button type="button" data-word="INSTANTE">Instante</button><span class="word-def">Um minuto que vira memória.</span></li>
+  </ol>
+  <p id="def" aria-live="polite"><b id="dw"></b><span id="dd"></span></p>
+ </div>
+</section>
+
+<section class="sec" id="colecao">
+ <div class="wrap">
+  <span class="eyebrow rv">Coleção</span>
+  <h2 class="rv">Três mostradores, <em>três noites.</em></h2>
+  <div class="cols">
+  <article class="item box rv" style="--c:#4f72ff"><div class="halo" aria-hidden="true"></div><div class="slot" role="img" aria-label="Relógio Órbita I"></div><h3>Órbita I</h3><p>Azul-noite e marcações douradas.</p></article>
+  <article class="item box rv" style="--c:#c9cfd9"><div class="halo" aria-hidden="true"></div><div class="slot" role="img" aria-label="Relógio Eclipse"></div><h3>Eclipse</h3><p>Grafite profundo, em tom sobre tom.</p></article>
+  <article class="item box rv" style="--c:#d9a35b"><div class="halo" aria-hidden="true"></div><div class="slot" role="img" aria-label="Relógio Zênite"></div><h3>Zênite</h3><p>Bronze escuro com detalhes azul-claro.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="sec man" id="manifesto"><div class="wrap"><span class="eyebrow rv">Manifesto</span>
+<div class="mf-box"><p class="mf" id="mf"><span class="w">Não</span> <span class="w">medimos</span> <span class="w">horas.</span> <span class="w">Medimos</span> <span class="w"><em>voltas</em></span> <span class="w">ao</span> <span class="w">redor</span> <span class="w">do</span> <span class="w">que</span> <span class="w">importa.</span></p><svg class="mf-ring" aria-hidden="true"><ellipse class="ring-o" pathLength="1"/><circle class="ring-p" r="5"/></svg></div></div></section>
+
+<section class="sec end" id="foot"><div class="wrap">
+<h2 class="split rv">Toda hora tem <em>uma órbita.</em></h2>
+<div class="zones" id="zones" role="group" aria-label="Hora ao vivo em cidades do mundo"><svg viewBox="-200 -200 400 400"></svg><div class="zinfo"><b id="zc">Sua hora</b><span id="zt">--:--:--</span></div></div>
+<a class="btn mag rv" href="#colecao">Ver coleção</a>
+<div class="frow"><span>Marca fictícia</span><span>Conceito de site · sem preços, prazos ou vendas</span><a href="#story">Voltar ao início</a></div>
+</div></section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/meshopt_decoder.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/environments/RoomEnvironment.js"></script>
+<script type="module" src="script.js"></script>
+<script type="module" src="cart-animation.js"></script>
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
